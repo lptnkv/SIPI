@@ -1,0 +1,119 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+      photo: 'Фотография'
+    attributes:
+      photo:
+        photo: 'Фотография'
+      user:
+        avatar: 'Аватарка'
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Адрес'
+        datetime: 'Дата и время'
+        description: 'Описание'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
+  controllers:
+    events:
+      created: 'Событие было успешно создано!'
+      updated: 'Событие было успешно редактировано!'
+      deleted: 'Событие было удалено!'
+      actions:
+        create_event: 'Создать событие'
+      warnings:
+        before_delete: 'Вы уверены, что хотите удалить событие?'
+    users:
+      created: 'Ваш аккаунт успешно создан!'
+      updated: 'Аккаунт успешно редактирован!'
+      actions:
+        change_password: 'Сменить пароль'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
+      warnings:
+        before_delete: 'Вы уверены, что хотите удалить фото?'
+    comments:
+      created: 'Комментарий создан'
+      error: 'Ошибка создани комментария'
+      destroyed: 'Комментарий удален'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
+  app:
+    photos: 'Фотографии'
+    name: 'MeetMyMen'
+    company: 'Хороший программист'
+    back: 'Назад'
+    delete: 'Удалить'
+    update: 'Обновить'
+    new_event: 'Новое событие'
+    save: 'Сохранить'
+    account: 'Профиль'
+    exit: 'Выйти'
+    cancel: 'Отмена'
+    organize: 'Организовал'
+    events: 'События'
+    there_are_in_form: 'В вашей форме'
+    edit: 'Редактировать'
+    change: 'Изменить'
+    forward: 'Готово'
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  notifications:
+    are_you_sure: 'Вы уверены?'
+    did_not_organize: 'Пользователь пока не организовал ни одного
+          события'
+    delete_my_account: 'Удалить мой аккаунт?'
+    delete_my_comment: 'Вы уверены, что хотите удалить этот комментарий?'
+    minimum_symbols: 'символов минимум'
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
+    models:
+      subscription:
+        attributes:
+          email:
+            exiting_email: 'Этот Email уже авторизирован на сайте'
+          event:
+            selsubscription: 'Нельзя подписываться на свои события'
+  registration:
+    create_profile: 'Создать аккаунт'
+    forgot_password: 'Забыли пароль?'
+    log_in: 'Вход'
+    reg: 'Регистрация'
+    send_reset_password_instructions: 'Отправить письмо'
+  edit:
+    user: 'Редактировать пользователя'
+    account: 'Редактировать профиль'
+    current_password: 'Текущий пароль'
+

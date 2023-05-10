@@ -1,0 +1,11 @@
+.text-gray {
+  color: #666666;
+}
+
+.text-sm {
+  font-size: 0.75rem;
+}
+
+.text-break {
+  word-wrap: break-word;
+}

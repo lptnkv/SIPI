@@ -1,0 +1,32 @@
+<div class="buffer-bottom p-2 border border-1 rounded-3">
+  <div class="d-flex inline-flex align-items-center">
+    <div>
+      <% if comment.user.present? %>
+        <%= render partial: 'users/user', object: comment.user %>
+      <% else %>
+        <em>
+          <strong>
+            <%= comment.user_name %>
+          </strong>
+        </em>
+      <% end %>
+
+      <div>
+        <em class="text-gray text-sm"><%= l comment.created_at, format: :short %></em>
+      </div>
+    </div>
+
+    <div class="buffer-left buffer-right self-flex">
+      <%= comment.body %>
+    </div>
+
+    <div class="align-self-end ms-auto p-2 bd-highlight">
+      <% if current_user_can_edit?(comment) %>
+        <div class="buffer-top mt-0">
+          <%= button_to t('app.delete'), event_comment_path(comment.event, comment), class: 'btn btn-danger text-sm',
+                        method: :delete, data: {confirm: t('notifications.delete_my_comment')} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

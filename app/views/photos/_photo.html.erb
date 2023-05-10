@@ -1,0 +1,7 @@
+<div class="event-photo buffer-both buffer-right-sm">
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url,
+              data: { toggle: 'lightbox', gallery: 'event-photos',
+                      src: render(partial: 'photos/gallery', size: 'lg', locals: {photo: photo}),
+                      type: "html"
+              } %>
+</div>

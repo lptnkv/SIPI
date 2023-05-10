@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bbq</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.slim.js"
+    integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
+    crossorigin="anonymous"></script>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=d9eef9f3-865f-49e6-998a-088b2b2263bd&lang=ru_RU"
+          type="text/javascript">
+  </script>
+
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1"/>
+
+  <link type="image/x-icon" href="/default_img/logo.png" rel="МММ">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex align-items-center">
+  <div class="container-fluid d-flex justify-content-start">
+    <%= link_to "#{t('app.name')}", root_path, class: 'navbar-brand' %>
+    <div id="navbarSupportedContent">
+      <ul class="navbar-nav mb-lg-0 d-flex align-items-center flex-row justify-content-center">
+        <% if user_signed_in? %>
+
+          <li class="nav-item mx-5">
+            <%= link_to t('app.account'), current_user, class: 'nav-link active d-block' %>
+          </li>
+          <li>
+            <%= button_to t('app.exit'), destroy_user_session_path, method: :delete, class: 'btn btn-link link-danger without_underline px-0' %>
+          </li>
+
+        <% else %>
+
+          <li class="nav-item nav-item mx-5">
+            <%= link_to t('registration.log_in'), new_user_session_path, class: 'link-success without_underline' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('registration.reg'), new_user_registration_path, class: 'link-success without_underline' %>
+          </li>
+
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container buffer-top">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <% if flash[:notice].present? %>
+        <div class="alert alert-secondary text-center alert-dismissible fade show">
+          <%= flash[:notice] %>
+          <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% elsif flash.now[:alert].present? %>
+        <div class="alert alert-danger text-center alert-dismissible fade show">
+          <%= flash[:alert] %>
+          <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </div>
+
+</div>
+
+</body>
+</html>

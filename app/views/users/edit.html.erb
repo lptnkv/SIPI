@@ -1,0 +1,13 @@
+<h1>
+  <%= t('edit.user') %>
+</h1>
+
+<div class="row">
+  <div class="col-6 buffer-top">
+    <%= render 'form' %>
+
+    <p class="buffer-top">
+      <%= link_to t('controllers.users.actions.change_password'), edit_user_registration_path, class: 'link-secondary' %>
+    </p>
+  </div>
+</div>
